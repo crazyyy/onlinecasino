@@ -1,7 +1,7 @@
 (function($){
 
 
-var mobileBreakPoint = 'screen and (max-width:1010px), screen and (max-device-width:1024px)', //Set mobileBreakPoint to the screenwidth at which the regular desktop menu is no longer needed and a top mobile menu is needed instead	
+var mobileBreakPoint = 'screen and (max-width:1010px), screen and (max-device-width:1024px)', //Set mobileBreakPoint to the screenwidth at which the regular desktop menu is no longer needed and a top mobile menu is needed instead
     menuIdentifier = '#nav' //parent id or class of menu container
 	mobileMenuIdentifier = 'ocau-mobile-menu',//id of new mobile menu
 	menuCategoryIdentifier = 'li.section_top'; //target for menu category headers
@@ -9,24 +9,24 @@ var mobileBreakPoint = 'screen and (max-width:1010px), screen and (max-device-wi
 	reduceList = false; //if the menu category is part of the LI and not its own separate entity, set this to true, otherwise false.
 	slickNavNative = false; //set to true if no menu rebuilding is necessary
 	menuText = 'MENU', //if different text is needed for the hamburger text, change it here
-	slickNavAjax = 'http://www.onlinecasino.com.au/js/easy-mobile-menu-ajax.php', //if you need to ajax in the menu, create on and then put the full file path here, otherwise false. 
+	slickNavAjax = 'ajax/easy-mobile-menu-ajax.html', //if you need to ajax in the menu, create on and then put the full file path here, otherwise false.
 	slickNavEngaged = false, //always false
     slickNavInitiated = false; //always false
-	
-	
-	
-	
+
+
+
+
 var screenwidth={
 	  //function to check initial state on page load and decide whether or not we need to initiate slicknav
 	  initialState:function(){
 		 var initialWidth = screenwidth.checkSize(),
-             currentMenuIndicator = screenwidth.checkMediaQuery(); 
+             currentMenuIndicator = screenwidth.checkMediaQuery();
 			 if(currentMenuIndicator == true){
 	             mobilemenu.slicknavEngage();
 			 }
 		     screenwidth.checkResize();
 		     console.log('running!');
-		  
+
 	  },
 	  //function to decide during window resize events if we need to show or hide slicknav
 	  checkResize: function(){
@@ -45,7 +45,7 @@ var screenwidth={
 					}
 			  })
 	  },
-	  
+
 	  //simple function to return screen width
 	  checkSize:function(){
 			  $size = $(window).width();
@@ -58,10 +58,10 @@ var screenwidth={
 	  },
 	  checkMediaQuery: function(){
 		 return $.mobile.media(mobileBreakPoint);
-	  }	  
-	  
-	  
-	 
+	  }
+
+
+
 }
 
 var mobilemenu={
@@ -76,7 +76,7 @@ var mobilemenu={
 		 mobilemenu.desktopMenuHide();
          console.log('engaged');
 	 },
-	 
+
 	 slicknavShow: function(){
 		 $('.slicknav_menu').show();
 		 slickNavEngaged = true;
@@ -84,7 +84,7 @@ var mobilemenu={
 		          console.log('shown');
 
 	 },
-	 
+
 	 slicknavHide: function(){
 		 $('.slicknav_menu').hide();
 		 slickNavEngaged = false;
@@ -92,11 +92,11 @@ var mobilemenu={
 		          console.log('hidden');
 
 	 },
-	 
+
 	 desktopMenuShow:function(){
        $(menuIdentifier).show();
 	 },
-	 
+
 	 desktopMenuHide:function(){
        $(menuIdentifier).hide();
 	 }
@@ -104,19 +104,19 @@ var mobilemenu={
 
 //function to rebuild menu into a structure that works well with slicknav. If no rebuilding is necessary, function simply clones regular menu for use as mobile menu
 var rebuildmenu={
-	
+
 	start:function(){
 
 		var $menuParent = $(menuIdentifier),
 		    $menuCategories = $(menuCategoryIdentifier),
 			$unorderedList = $($menuParent.find('ul'));
 			$newMenu = $('<div>').attr('id',mobileMenuIdentifier);
-			 
+
 		if(slickNavAjax != false){
 			rebuildmenu.ajaxMobileMenu($newMenu);
 			console.log('ajax!');
 		}
-			 
+
 		else if(slickNavNative != true){
               rebuildmenu.makeNewMenu($menuCategories, $unorderedList, $newMenu)
                console.log('rebuilding');
@@ -127,8 +127,8 @@ var rebuildmenu={
 
 		}
 	},
-	
-	
+
+
 	ajaxMobileMenu:function($newMenu){
 		$.ajax({
             type:"GET",
@@ -141,7 +141,7 @@ var rebuildmenu={
      });
 
 	},
-	
+
 	makeNewMenu:function($menuCategories, $unorderedList, $newMenu){
 				 $menuCategories.each(function(i){
 					if(reduceList == true){
@@ -149,26 +149,26 @@ var rebuildmenu={
 							$curList = $('<ul>').append($listReduce).html();
 					}
 					else{
-						var $curList = $unorderedList.eq(i).html();	
+						var $curList = $unorderedList.eq(i).html();
 					 }
-			
+
 					 var header = $(this).text();
 					   $newMenu.append('<li>'+header+'<ul>'+$curList+'</ul></li>');
-				});	
+				});
 			    rebuildmenu.engageRebuiltMenu($newMenu);
 	},
-	
+
 	useCurrentMenu:function($menuParent,$newMenu){
 			$menuParentClone = $menuParent.clone().attr('class','thingybob');
 			$newMenu.append($menuParentClone);
 			rebuildmenu.engageRebuiltMenu($newMenu);
-		
+
 	},
-	
+
 	engageRebuiltMenu:function($newMenu){
 		$newMenu.appendTo('body').hide();
 	    screenwidth.initialState();
-		
+
 	}
 }
 
