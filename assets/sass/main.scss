@@ -7,7 +7,180 @@
 // @import 'import/mixin.scss';
 // @import 'import/wordpress.scss';
 @import 'sprite';
-// @import 'font_fontawesome';
+@import 'font_fontawesome';
 // @import 'font_opensans';
 // @import 'font_roboto';
+@import 'import/fonts';
+@import 'import/winners_style';
+@import 'import/limarquee';
+@import 'import/styles';
+@import 'import/mobile-menu';
 
+
+.long_header {
+  background: url(../img/menu-page-bg.png) repeat-x;
+}
+
+#top_feature {
+  top: 173px;
+}
+
+.long_header #main_area {
+  margin: 426px 0 0;
+}
+
+.nav-block {
+  position: absolute;
+  z-index: 1;
+  top: 123px;
+  left: 0;
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 50px;
+
+  border: 1px solid #010101;
+  border-width: 1px 0;
+  background: #183e05;
+}
+
+.nav-wrap {
+  max-width: 1011px;
+  margin: 0 auto;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.nav li {
+  float: left;
+
+  list-style: none;
+}
+
+.nav li.current a,
+.nav li:hover a {
+  color: #183e05;
+  background: #7b9b5b;
+}
+
+.nav li a {
+  font-size: 14px;
+  line-height: 30px;
+
+  position: relative;
+
+  display: inline-block;
+
+  padding: 10px 20px;
+
+  text-decoration: none;
+
+  color: #afcd83;
+}
+
+.nav li a:after {
+  position: absolute;
+  top: 6px;
+  right: 0;
+
+  width: 1px;
+  height: 39px;
+
+  content: '';
+
+  background: #375826;
+}
+
+.nav li.current a:after,
+.nav li:hover a:after {
+  display: none;
+}
+
+.nav li:first-child a {
+  color: transparent;
+  background-image: url(../img/home-icon.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.nav-block .search-block {
+  position: relative;
+
+  float: right;
+
+  padding-top: 8px;
+}
+
+.nav-block .search-block input {
+  font-size: 13px;
+  font-style: italic;
+  line-height: 16px;
+
+  width: 176px;
+  height: 16px;
+  margin-right: 5px;
+  padding: 8px 12px;
+
+  color: #fff;
+  border: 1px solid #bfc9b9;
+  background: #0d2908;
+}
+
+.nav-block .search-block:after {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+
+  width: 13px;
+  height: 13px;
+
+  content: '';
+
+  background: url(../img/nav-search-icon.png) no-repeat;
+}
+
+.nav-block .search-block::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.nav-block .search-block:-moz-placeholder {
+  color: #fff;
+}
+
+.nav-block .search-block::-moz-placeholder {
+  color: #fff;
+}
+
+.nav-block .search-block:-ms-input-placeholder {
+  color: #fff;
+}
+
+#main_area {
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 1010px) {
+  .nav-block {
+    display: none;
+  }
+  .long_header {
+    background: none;
+  }
+  #top_feature {
+    top: 173px;
+  }
+  #main_area,
+  .long_header #main_area {
+    margin: 0;
+  }
+}
+
+
+
+@import 'import/hp';

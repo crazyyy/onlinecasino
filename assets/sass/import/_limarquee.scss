@@ -1,0 +1,70 @@
+/*Plugin CSS*/
+
+.str_wrap {
+  font-size: 12px;
+  line-height: 16px;
+
+  position: relative;
+
+  overflow: hidden;
+  //zoom:1;
+
+  width: 100%;
+
+  -moz-user-select: none;
+       user-select: none;
+  white-space: nowrap;
+
+  background: #f6f6f6;
+
+  -khtml-user-select: none;
+  &.str_active {
+    background: #f1f1f1;
+  }
+}
+
+.str_move {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  cursor: move;
+  white-space: nowrap;
+}
+
+.str_move_clone {
+  position: absolute;
+  top: 0;
+  left: 100%;
+
+  display: inline-block;
+
+  vertical-align: top;
+}
+
+.str_vertical .str_move_clone {
+  top: 100%;
+  left: 0;
+}
+
+.str_down .str_move_clone {
+  bottom: 100%;
+  left: 0;
+}
+
+.str_vertical .str_move,
+.str_down .str_move {
+  width: 100%;
+
+  white-space: normal;
+}
+
+.str_static .str_move,
+.no_drag .str_move,
+.noStop .str_move {
+  cursor: inherit;
+}
+
+.str_wrap img {
+  max-width: none !important;
+}

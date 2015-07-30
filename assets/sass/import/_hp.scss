@@ -1,0 +1,268 @@
+.casino_more_table_row a {
+  display: block;
+}
+
+.mobile_btn_container {
+  position: relative;
+
+  display: block;
+}
+
+.casino_more_table_btn,
+.casino_more_talbe_btn {
+  margin-bottom: 14px;
+
+  vertical-align: middle;
+}
+
+.casino_more_table__container .btn_container {
+  position: absolute;
+  right: 2%;
+  bottom: 6px;
+
+  display: block;
+
+  width: 160px;
+}
+
+.rogue-widget {
+  margin: 10px 0;
+
+  background: #f2e1e1;
+  .top-box {
+    font: bold 23px/40px Arial, Helvetica, sans-serif;
+
+    color: #fff;
+    border: 1px solid #363636;
+    border-bottom: none;
+    background: #f4f4f4;
+    background: linear-gradient(#620000, #b60215);
+  }
+  h2 {
+    font: bold 23px/40px Arial, Helvetica, sans-serif;
+
+    margin: 0;
+    padding: 3px 0 4px;
+
+    color: #fff;
+    a {
+      font: bold 23px/40px Arial, Helvetica, sans-serif;
+
+      margin: 0;
+      padding: 3px 0 4px;
+
+      color: #fff;
+    }
+  }
+}
+
+#content .rogue-widget h2 {
+  font: bold 23px/40px Arial, Helvetica, sans-serif;
+
+  margin: 0;
+  padding: 3px 0 4px;
+
+  color: #fff;
+  a {
+    font: bold 23px/40px Arial, Helvetica, sans-serif;
+
+    margin: 0;
+    padding: 3px 0 4px;
+
+    color: #fff;
+  }
+}
+
+.rogue-widget h2,
+#content .rogue-widget h2 {
+  position: relative;
+
+  display: inline-block;
+
+  padding-left: 73px;
+
+  background: url(../img/rogue-ttl-img-l.png) no-repeat 0 50%;
+}
+
+.rogue-widget h2:after,
+#content .rogue-widget h2:after {
+  position: absolute;
+  top: 50%;
+  right: -71px;
+
+  width: 61px;
+  height: 47px;
+  margin-top: -23px;
+
+  content: '';
+
+  background: url(../img/rogue-ttl-img-r.png) no-repeat 0 50%;
+}
+
+.rogue-widget .bot-box {
+  padding: 11px 16px 18px;
+
+  border: 1px solid #7f0404;
+  .subttl {
+    font-size: 11px;
+    line-height: 13px;
+
+    margin-bottom: 16px;
+
+    color: #636363;
+  }
+}
+
+#content .rogue-widget .bot-box .subttl {
+  font-size: 11px;
+  line-height: 13px;
+
+  margin-bottom: 16px;
+
+  color: #636363;
+}
+
+.rogue-widget {
+  .blacklist {
+    overflow: hidden;
+
+    width: 100%;
+    ul {
+      margin: 0;
+      padding: 0;
+
+      list-style: none;
+    }
+    li {
+      float: left;
+      overflow: hidden;
+
+      box-sizing: border-box;
+      width: 48.5%;
+      margin-bottom: 18px;
+      padding-left: 54px;
+
+      list-style: none;
+
+         border-radius: 10px;
+      background: #363636 url(../img/rogue-blacklist-bg.png) no-repeat 7px 50%;
+
+      -o-border-radius: 10px;
+      &:nth-child(even) {
+        margin-left: 3%;
+      }
+    }
+    .box {
+      overflow: hidden;
+
+      height: 76px;
+
+      border: 1px solid #9b9999;
+      border-left: none;
+      border-radius: 0 10px 10px 0;
+      background: #f4f4f4;
+      background: linear-gradient(#e3e3e3, #fff);
+    }
+    .img-wrap {
+      float: left;
+
+      width: 77px;
+      height: 77px;
+      margin-left: 3px;
+      img {
+        max-width: 70%;
+        max-height: 70%;
+      }
+    }
+  }
+  .tbl {
+    display: table;
+
+    width: 100%;
+    height: 100%;
+  }
+  .tbl-cell {
+    display: table-cell;
+
+    vertical-align: middle;
+  }
+  .blacklist-box {
+    overflow: hidden;
+
+    padding-top: 9px;
+  }
+  .blacklist p:first-child {
+    font: bold 15px/17px Arial, Helvetica, sans-serif;
+
+    margin: 0 0 6px 18px;
+
+    text-transform: uppercase;
+
+    color: #414141;
+  }
+}
+
+#content .blacklist p:first-child {
+  font: bold 15px/17px Arial, Helvetica, sans-serif;
+
+  margin: 0 0 6px 18px;
+
+  text-transform: uppercase;
+
+  color: #414141;
+}
+
+.rogue-widget .blacklist .for,
+#content .blacklist .for {
+  font-size: 12px;
+  line-height: 14px;
+
+  margin-bottom: 6px;
+  padding-left: 15px !important;
+
+  color: #545454;
+  background: url(../img/cross.png) no-repeat 0 50%;
+}
+
+.rogue-widget .view-all {
+  text-align: center;
+  a {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+
+    position: relative;
+
+    display: inline-block;
+
+    height: 18px;
+    padding: 4px 32px 4px 12px;
+
+    text-decoration: none;
+
+    color: #fff;
+    border-top: 1px solid #55854e;
+    border-bottom: 1px solid #454040;
+       border-radius: 5px;
+    background: #44802b url(../img/rogue-lnk-bg.png) repeat-x;
+    text-shadow: 1px 1px 1px #000;
+
+    -o-border-radius: 5px;
+    &:hover {
+      background: #297022 url(../img/rogue-lnk-bg-h.png) repeat-x;
+    }
+    &:after {
+      position: absolute;
+      top: 50%;
+      right: 5px;
+
+      width: 22px;
+      height: 16px;
+      margin-top: -8px;
+
+      content: '';
+
+      background: url(../img/rogue-arrow.png) no-repeat;
+    }
+  }
+}

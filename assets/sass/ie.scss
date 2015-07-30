@@ -1,0 +1,44 @@
+/* IE 7-8 filters */
+
+.main-heading .top {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0c2a01', endColorstr='#7cac28',GradientType=0 );
+}
+
+.presentation-box .four-boxes .box {
+  background: transparent;
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b2ffffff,endColorstr=#b2ffffff);
+}
+
+#feature_pokies {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d3e09', endColorstr='#6aa728',GradientType=0 );
+}
+
+.reviews-block a {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ececec', endColorstr='#f5f5f5',GradientType=0 );
+  &:hover {
+    border: 2px solid #f0eeed;
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fbfaf9',GradientType=0 );
+  }
+}
+
+/* IE 7 styles */
+
+* + html {
+  .presentation-box .four-boxes a .img-wrap1 {
+    float: left;
+
+    margin-top: expression(this.parentNode.offsetHeight > this.offsetHeight ? ((this.parentNode.offsetHeight-this.offsetHeight)/2 + 'px') : '0');
+    margin-left: 9px;
+  }
+  .trusted-area {
+    width: 550px;
+  }
+}
+
+/* IE 7 backgrounds */
+
+#tournament_ul li.ajax_li {
+  background: url(i/bg-tabs.png) repeat-x;
+}

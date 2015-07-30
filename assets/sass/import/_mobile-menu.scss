@@ -1,0 +1,289 @@
+/*
+    Mobile Menu Core Style
+*/
+
+.slicknav_btn {
+  line-height: 1.125em;
+
+  position: relative;
+
+  display: block;
+  float: left;
+
+  padding: .438em .625em .438em .625em;
+
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.slicknav_menu {
+  .slicknav_menutxt {
+    line-height: 1.188em;
+
+    display: block;
+    float: left;
+  }
+  .slicknav_icon {
+    float: left;
+
+    margin: .188em 0 0 .438em;
+  }
+  .slicknav_no-text {
+    margin: 0;
+  }
+  .slicknav_icon-bar {
+    display: block;
+
+    width: 1.125em;
+    height: .133em;
+
+    border-radius: 1px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+  }
+}
+
+.slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar {
+  margin-top: .188em;
+}
+
+.slicknav_nav {
+  clear: both;
+  ul,
+  li {
+    display: block;
+  }
+  .slicknav_arrow {
+    font-size: .8em;
+
+    float: right;
+
+    margin-right: 30px;
+
+    color: green;
+  }
+  .slicknav_item {
+    cursor: pointer;
+  }
+  .slicknav_row,
+  a {
+    display: block;
+  }
+  .slicknav_item a,
+  .slicknav_parent-link a {
+    display: inline;
+  }
+}
+
+.slicknav_menu {
+  font-size: 16px;
+
+  *zoom: 1;
+  &:before {
+    display: table;
+
+    content: ' ';
+  }
+  &:after {
+    display: table;
+    clear: both;
+
+    content: ' ';
+  }
+}
+
+/* IE6/7 support */
+
+/*
+    User Default Style
+    Change the following styles to modify the appearance of the menu.
+*/
+
+/* Button */
+
+.slicknav_btn {
+  /* background-color: #666666; */
+  position: absolute;
+  z-index: 20;
+  top: 50px;
+  right: 10px;
+
+  box-sizing: border-box;
+  margin: 5px 5px 6px;
+
+  text-decoration: none;
+
+  border: 2px solid #3c8f12;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+          border-radius: 3px;
+  background: -webkit-linear-gradient(left, #05692c, #357c0e);
+  background:         linear-gradient(to right, #05692c, #357c0e);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
+}
+
+/* Button Text */
+
+.slicknav_menu {
+  .slicknav_menutxt {
+    font-weight: bold;
+
+    color: #fff;
+    text-shadow: 0 1px 3px #000;
+  }
+  .slicknav_icon-bar {
+    background-color: #f5f5f5;
+  }
+  /*background:linear-gradient(to bottom, #0c2a01 0%, #7cac28 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);*/
+  /*padding:5px;*/
+  /*margin-bottom:14px;*/
+}
+
+/* Button Lines */
+
+.slicknav_nav {
+  font-size: .875em;
+
+  position: absolute;
+  z-index: 30;
+  top: 120px;
+  right: 0;
+
+  float: right;
+  overflow: hidden;
+
+  width: 245px;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  color: #fff;
+  border-bottom: 3px solid rgba(132, 255, 0, .6);
+  border-left: 3px solid rgba(132, 255, 0, .6);
+  background: rgb(0, 0, 0);
+  box-shadow: -15px 2px 20px rgba(7, 50, 1, .8);
+  ul {
+    overflow: hidden;
+
+    margin: 0 0 0 20px;
+    padding: 0;
+
+    list-style: none;
+  }
+  .slicknav_row {
+    margin: 2px 5px;
+    padding: 10px 10px;
+  }
+  a {
+    margin: 2px 5px;
+    padding: 10px 10px;
+
+    text-decoration: none;
+
+    color: #fff;
+    &:hover,
+    &:visited {
+      text-decoration: none;
+    }
+  }
+  .slicknav_item a,
+  .slicknav_parent-link a {
+    margin: 0;
+    padding: 0;
+  }
+  .slicknav_row:hover {
+    color: #fff;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+    background: rgba(204, 204, 204, .28);
+  }
+  a:hover {
+    color: #fff;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+    background: rgba(204, 204, 204, .28);
+  }
+  .slicknav_txtnode {
+    margin-left: 15px;
+  }
+}
+
+.mobile-menu a {
+  text-decoration: none;
+
+  color: #fff;
+}
+
+@media screen and (max-width: 760px) {
+  .slicknav_nav {
+    top: 90px;
+  }
+
+  .slicknav_btn {
+    top: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mobile-sub-menu {
+    display: block !important;
+  }
+
+  #mobile_guide {
+    margin-left: 10%;
+  }
+
+  .slicknav_btn {
+    top: 73px;
+
+    margin-right: 2%;
+
+    border: none;
+    background: none;
+    &:hover {
+      background-color: #10360a;
+    }
+  }
+
+  .slicknav_menu {
+    .slicknav_menutxt,
+    .slicknav_icon {
+      font-size: 12px;
+
+      float: right !important;
+    }
+    .slicknav_menutxt {
+      margin-left: 5px;
+    }
+  }
+
+  .slicknav_nav {
+    top: 113px;
+  }
+
+  .long_header #main_area,
+  #main_area {
+    margin-top: 120px !important;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  #mobile_guide {
+    margin-left: 10%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #mobile_guide {
+    margin-left: 5%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #mobile_guide {
+    margin-left: 0;
+  }
+}
