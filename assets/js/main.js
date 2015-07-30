@@ -1,4 +1,4 @@
-$.get("http://www.onlinecasino.com.au/feeds/scheduled.php?g=games", function(data) {
+$.get("ajax/games.html", function(data) {
   $(".home-winnerFeedScroll").append(data);
 });
 $(function() {
