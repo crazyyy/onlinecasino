@@ -1,0 +1,112 @@
+.home-winners-block {
+  background: #fff;
+  .main-heading {
+    margin-bottom: 0;
+  }
+}
+
+.home-winners_header {
+  display: table;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+
+  background: #e2ecc9;
+  &:after {
+    display: block;
+    clear: both;
+
+    content: '';
+  }
+  .home-winners-h {
+    font-size: 15px;
+    font-weight: 700;
+
+    display: table-cell;
+
+    width: 19%;
+
+    text-align: center;
+    text-align: center;
+    vertical-align: middle;
+
+    color: #2d6713;
+  }
+}
+
+.home-winners_wrapper {
+  overflow: hidden;
+
+  height: 255px;
+  padding: 0 15px 15px 15px;
+  .home-winnerFeedScroll {
+    height: 100%;
+    margin: 0;
+
+    background: none;
+  }
+  .str_wrap.str_active {
+    background: none;
+  }
+}
+
+.home-winners_item {
+  display: table;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 35px;
+  padding: 0;
+
+  list-style: none;
+
+  cursor: pointer !important;
+
+  border-bottom: 2px solid #e8e8e8;
+  &:hover {
+    background: linear-gradient(to bottom, #fca502, #ff5d00) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.home-winners_col {
+  font-size: 15px;
+  font-weight: 700;
+
+  display: table-cell;
+
+  width: 19%;
+
+  text-align: center;
+  vertical-align: middle;
+
+  color: #5f5f5f;
+  &:nth-child(2) {
+    width: 18%;
+  }
+  &:first-child {
+    padding-right: 35px;
+    padding-left: 20px;
+  }
+  &:nth-child(5) {
+    width: 25% !important;
+  }
+}
+
+.tournaments-block {
+  background: #fff;
+}
+
+.home-winners_col img {
+  width: 77px;
+  max-width: 100%;
+  height: 36px;
+}
+
+@media screen and (max-width: 479px) {
+  .home-winners_col,
+  .home-winners_header .home-winners-h {
+    font-size: 12px;
+  }
+}
