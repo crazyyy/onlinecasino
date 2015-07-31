@@ -9,42 +9,29 @@ var free ={
 		//free.countImagesLoading();
 		getCount =  setInterval(free.updateImagesLoading,100);
 	},//end function
-	
+
 	initFilterToggle: function(){
-		
-		/*$('.row').on('click','a.filter-lnk',function(e){
-			e.preventDefault();
-			$target = $(this);
-			$form = $('#form_hold');
-			$parent =  $(this).parent().parent().parent();
-			if($parent.hasClass('open')){
-				$parent.removeClass('open');
-				$form.slideUp('fast');
-			}
-			else{
-				$parent.addClass('open');
-				$form.slideDown('fast');
-			}
-		});*/
+
+
 		$form = $('#form_hold');
 		$form.slideDown('fast');
 
-		
+
 	}, //end initFilterToggle
-	
+
 	getFilter: function(){
-		
+
 		$('#form_hold').on('change','select',function(){
 		 $listOne   = $('#sort-games').val();
 		 $listTwo   = $('#by-software').val();
 		 $listThree = $('#game-type').val();
-		 
+
 		 free.constructFilter($listOne,$listTwo,$listThree);
 	    });
-		
-		
+
+
 	},//end getfilter
-	
+
 	   constructFilter:function(one,two,three){
 		$.ajax({
             type:"GET",
@@ -52,17 +39,19 @@ var free ={
             {
                 request.setRequestHeader("authorize", sessionAuthorize);
             },
-            url: 'http://www.onlinecasino.com.au/free-games/free_games/filter_return.php?one='+one+'&two='+two+'&three='+three,
+            url: 'ajax/filter_return.html',
+            // url: 'http://www.onlinecasino.com.au/free-games/free_games/filter_return.php?one='+one+'&two='+two+'&three='+three,
             success: function(data) {
                 $('.free-games-block').html(data);
 				free.updateFilterOnScreen(one,two);
  				free.justGetImages();
 				lightbox.start();
 	 			//lazy.start();
-				
+
 $.ajax({
 type: "POST",
-url: 'http://www.onlinecasino.com.au/free-games/games_count.php?getParam1='+one+'&getParam2='+two+'&getParam3='+three,
+url: 'ajax/games_count.html',
+// url: 'http://www.onlinecasino.com.au/free-games/games_count.php?getParam1='+one+'&getParam2='+two+'&getParam3='+three,
 cache: false,
 success: function(html){
 
@@ -75,14 +64,14 @@ $(".filter-panel .col:last-child").html(html);
      });
 
 	},//end constructfilter
-	
+
 	updateFilterOnScreen: function(one,two){
 	  $colOne = $('.filter-data').children('.col:eq(0)');
 	  $colTwo = $('.filter-data').children('.col:eq(1)');
 	  $updateOne = $('#sort-games').find(":selected").text();
 	  $updateTwo = $('#by-software').find(":selected").text();
 	  $updateThree = $('#game-type').find(":selected").text();
-	  
+
       $colOne.html('Sorted: '+$updateOne);
 	  if($updateThree =='All'){
 	  $colTwo.html('Filter: '+$updateTwo);
@@ -98,7 +87,7 @@ $(".filter-panel .col:last-child").html(html);
 	                 'color':'#090'
 	                 });
 	  console.log($updateThree);
-			
+
 	},
 	countImagesLoading:function(){
 	  imgCount = 0;
@@ -111,13 +100,13 @@ $(".filter-panel .col:last-child").html(html);
 	},
 	justGetImages: function(){
 	  $filterImg = $('.free-games-block').children('.game-block').children('a').children('img');
-	  $colThree.html($filterImg.length);	
+	  $colThree.html($filterImg.length);
 	  $colThree.css({'fontWeight':'bold',
 	                 'color':'#090'
 	                 });
 	},
 	/* updateImagesLoading: function(){
-	  $colThree.html(imgCount);	
+	  $colThree.html(imgCount);
 	  $colThree.css({'fontWeight':'bold',
 	                 'color':'#090'
 	                 });
@@ -130,9 +119,9 @@ $(".filter-panel .col:last-child").html(html);
 				$listReset.removeClass('active');
 			    filter.applyClass($('#az').parent());
 				filter.constructFilter(null,'az');
-			}	*/   
+			}	*/
 	},//end resetFilter
-	
+
 
 }
 //end var free======================================================================================================================================================================================
@@ -143,12 +132,12 @@ var lightbox={
 		 lightbox.initGames();
 		 lightbox.closeLightbox();
 	 },
-	 
-	 initGames:function(){
-		 
 
-		 
-		 
+	 initGames:function(){
+
+
+
+
 		 //$('.game-block').on('click','.popover',function(e){
 		 $(document).off('click', '.popover').on('click', '.popover', function(e){
 			 e.preventDefault();
@@ -160,20 +149,21 @@ var lightbox={
 				  {
 					  request.setRequestHeader("authorize", sessionAuthorize);
 				  },
-				  url: 'http://www.onlinecasino.com.au/free-games/free_games/filter_return.php?type='+id,
+          url: 'ajax/filter_return_id.html',
+				  // url: 'http://www.onlinecasino.com.au/free-games/free_games/filter_return.php?type='+id,
 				  success: function(data) {
 					  lightbox.createScreen();
 					  lightbox.lightboxShow();
 					  lightbox.appendGame(data);
 					  lightbox.addId(id);
 					  lightbox.trackClick(id);
-					  rating.start();	
+					  rating.start();
 
 				  }
 		      });
 		 });
-		 
-		 
+
+
 	 },
 	createScreen: function(){
          var $screenElement =
@@ -186,8 +176,8 @@ var lightbox={
 					   height:'100%',
 					   zIndex:998,
 					   backgroundColor: '#000000',
-                       opacity: '0.5'				   					   
-					   
+                       opacity: '0.5'
+
 				     }
 			)
 			lightbox.modifyStyles();
@@ -195,7 +185,7 @@ var lightbox={
 	},
 	showScreen: function(e){
 				e.prependTo(document.body);
-	},//end showScreen	
+	},//end showScreen
 	modifyStyles: function(){
 		$('.lightbox').css(
 		                     {
@@ -204,7 +194,7 @@ var lightbox={
 							  top: '50%',
 							  left: '50%',
 							  position: 'fixed',
-							  zIndex: '9999'							   
+							  zIndex: '9999'
 						     }
 						   )
 	},
@@ -215,12 +205,13 @@ var lightbox={
 		{
 			request.setRequestHeader("authorize", sessionAuthorize);
 		},
-		url: 'http://www.onlinecasino.com.au/free-games/free_games/click_track.php?game='+e,
+    url: 'click_track.html',
+		// url: 'http://www.onlinecasino.com.au/free-games/free_games/click_track.php?game='+e,
 		 success: function(data) {
 			 console.log('click successfully tracked');
 		}
 	  });
-		
+
 	},
 	addId: function(e){
        $('span.rating').attr('id',e);
@@ -250,8 +241,8 @@ var lightbox={
 	},
 	lightboxShow: function(){
 		$('.lightbox').show();
-	}		
-		
+	}
+
 }
 
 //end var lightbox========================================================================================================================================================================================
@@ -259,53 +250,53 @@ var lightbox={
 var rating={
 	start: function(){
        $('div.game-info').on('mousemove','span.rating',function(e){
-	   
+
 	   var x = e.pageX - $(this).offset().left
        var y = e.pageY - $(this).offset().top
-	   
+
        //rating.makeBold();
 
 			if(x>'0' && x<'12'){
-			 $(this).attr('class','rating rating_05')	
+			 $(this).attr('class','rating rating_05')
 			}
 			else if(x>'12' && x<'24'){
-			 $(this).attr('class','rating rating_10')	
+			 $(this).attr('class','rating rating_10')
 			}
 			else if(x>'24' && x<'36'){
-			 $(this).attr('class','rating rating_15')	
+			 $(this).attr('class','rating rating_15')
 			}
 			else if(x>'36' && x<'48'){
-			 $(this).attr('class','rating rating_20')	
+			 $(this).attr('class','rating rating_20')
 			}
 			else if(x>'48' && x<'60'){
-			 $(this).attr('class','rating rating_25')	
+			 $(this).attr('class','rating rating_25')
 			}
 			else if(x>'60' && x<'72'){
-			 $(this).attr('class','rating rating_30')	
+			 $(this).attr('class','rating rating_30')
 			}
 			else if(x>'72' && x<'84'){
-			 $(this).attr('class','rating rating_35')	
+			 $(this).attr('class','rating rating_35')
 			}
 			else if(x>'84' && x<'96'){
-			 $(this).attr('class','rating rating_40')	
+			 $(this).attr('class','rating rating_40')
 			}
 			else if(x>'96' && x<'108'){
-			 $(this).attr('class','rating rating_45')	
+			 $(this).attr('class','rating rating_45')
 			}
 			else if(x>'108' && x<'120'){
-			 $(this).attr('class','rating rating_50')	
+			 $(this).attr('class','rating rating_50')
 			}
 	   }).on('mouseleave','span.rating', function(){
 		     $(this).attr('class','rating rating_00');
-			// rating.removeBold();	
-		   
+			// rating.removeBold();
+
 	   }).on('click','span.rating', function(){
 		   var ratingId = ($(this).attr('id'));
 		   var ratingClass = ($(this).attr('class'));
            var ratingNum = ratingClass.replace(/[^0-9]/g, '')
 		   rating.sendRating(ratingId,ratingNum)
 	   })
-		    	
+
   },//end start
      sendRating:function(e,f){
 		$.ajax({
@@ -313,9 +304,10 @@ var rating={
 		beforeSend: function (request)
 		{
 			request.setRequestHeader("authorize", sessionAuthorize);
-		    rating.disableHandler()	   
+		    rating.disableHandler()
 		},
-		url: 'http://www.onlinecasino.com.au/free-games/free_games/write_rating.php?game='+e+'&rating='+f,
+    url: 'ajax/write_rating.html',
+		// url: 'http://www.onlinecasino.com.au/free-games/free_games/write_rating.php?game='+e+'&rating='+f,
 		success: function(data) {
 		}
 	});
@@ -323,7 +315,7 @@ var rating={
    },//end sendrating
      disableHandler:function(){
        $('div.game-info').off('mousemove','span.rating')
-                .off('mouseleave','span.rating')	
+                .off('mouseleave','span.rating')
 		        .off('click','span.rating');
 	rating.endingEffects();
    },//end disableHandler
@@ -336,7 +328,7 @@ var rating={
 //end var rating==========================================================================================================================================================================================
 
 $(function() {
- 
+
 $('.more_button').live("click",function()
 {
 var getId = $(this).attr("id");
@@ -351,10 +343,11 @@ var listOne   = $('#sort-games').val();
 
 if(getId)
 {
-$("#load_more_"+getId).attr("disabled", "disabled"); 
+$("#load_more_"+getId).attr("disabled", "disabled");
 $.ajax({
 type: "POST",
-url: "http://www.onlinecasino.com.au/free-games/more_content.php",
+url: "ajax/more_content.html",
+// url: "http://www.onlinecasino.com.au/free-games/more_content.php",
 data: "getLastContentId="+ getId + "&getParam1="+ listOne + "&getParam2="+ listTwo + "&getParam3="+ listThree + "&numItems="+ numItems1,
 cache: false,
 success: function(html){
@@ -374,7 +367,7 @@ return false;
 
 $.ajax({
 type: "POST",
-url: "http://www.onlinecasino.com.au/free-games/games_count.php",
+url: "ajax/games_count.html",
 data: "getParam2=all&getParam3=all",
 cache: false,
 success: function(html){
@@ -422,6 +415,6 @@ $(window).load(function() {
 	  }
 	  else{
 	     clearInterval(getCount);
-		 $colThree.html('<strong>'+$updateThree+'</strong>');	
+		 $colThree.html('<strong>'+$updateThree+'</strong>');
 	  }
 }); */
