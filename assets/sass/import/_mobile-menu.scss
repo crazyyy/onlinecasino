@@ -91,17 +91,9 @@
   }
 }
 
-/* IE6/7 support */
 
-/*
-    User Default Style
-    Change the following styles to modify the appearance of the menu.
-*/
-
-/* Button */
 
 .slicknav_btn {
-  /* background-color: #666666; */
   position: absolute;
   z-index: 20;
   top: 50px;
@@ -113,12 +105,8 @@
   text-decoration: none;
 
   border: 2px solid #3c8f12;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-          border-radius: 3px;
-  background: -webkit-linear-gradient(left, #05692c, #357c0e);
-  background:         linear-gradient(to right, #05692c, #357c0e);
+  border-radius: 3px;
+  background: linear-gradient(left, #05692c, #357c0e);
   text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
 }
 
@@ -134,9 +122,6 @@
   .slicknav_icon-bar {
     background-color: #f5f5f5;
   }
-  /*background:linear-gradient(to bottom, #0c2a01 0%, #7cac28 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);*/
-  /*padding:5px;*/
-  /*margin-bottom:14px;*/
 }
 
 /* Button Lines */
@@ -194,16 +179,12 @@
   }
   .slicknav_row:hover {
     color: #fff;
-    -webkit-border-radius: 6px;
-       -moz-border-radius: 6px;
-            border-radius: 6px;
+    border-radius: 6px;
     background: rgba(204, 204, 204, .28);
   }
   a:hover {
     color: #fff;
-    -webkit-border-radius: 6px;
-       -moz-border-radius: 6px;
-            border-radius: 6px;
+    border-radius: 6px;
     background: rgba(204, 204, 204, .28);
   }
   .slicknav_txtnode {
@@ -215,75 +196,4 @@
   text-decoration: none;
 
   color: #fff;
-}
-
-@media screen and (max-width: 760px) {
-  .slicknav_nav {
-    top: 90px;
-  }
-
-  .slicknav_btn {
-    top: 30px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .mobile-sub-menu {
-    display: block !important;
-  }
-
-  #mobile_guide {
-    margin-left: 10%;
-  }
-
-  .slicknav_btn {
-    top: 73px;
-
-    margin-right: 2%;
-
-    border: none;
-    background: none;
-    &:hover {
-      background-color: #10360a;
-    }
-  }
-
-  .slicknav_menu {
-    .slicknav_menutxt,
-    .slicknav_icon {
-      font-size: 12px;
-
-      float: right !important;
-    }
-    .slicknav_menutxt {
-      margin-left: 5px;
-    }
-  }
-
-  .slicknav_nav {
-    top: 113px;
-  }
-
-  .long_header #main_area,
-  #main_area {
-    margin-top: 120px !important;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  #mobile_guide {
-    margin-left: 10%;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  #mobile_guide {
-    margin-left: 5%;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  #mobile_guide {
-    margin-left: 0;
-  }
 }

@@ -1,15 +1,5 @@
-// @import 'import/reset';
-// @import 'import/variables';
-// @import 'import/buttons';
-// @import 'import/forms';
-// @import 'import/lists';
-// @import 'import/tables';
-// @import 'import/mixin.scss';
-// @import 'import/wordpress.scss';
 @import 'sprite';
 @import 'font_fontawesome';
-// @import 'font_opensans';
-// @import 'font_roboto';
 @import 'import/fonts';
 @import 'import/winners_style';
 @import 'import/limarquee';
@@ -163,22 +153,6 @@
 
 #main_area {
   margin-top: 40px;
-}
-
-@media screen and (max-width: 1010px) {
-  .nav-block {
-    display: none;
-  }
-  .long_header {
-    background: none;
-  }
-  #top_feature {
-    top: 173px;
-  }
-  #main_area,
-  .long_header #main_area {
-    margin: 0;
-  }
 }
 
 
@@ -939,4 +913,10 @@
 .reviews-block .rate span.rateon {
     margin: 5px 0 0;
     background-position: 0 -21px;
+}
+.breadcrumbs {
+  padding-top: 15px;
+}
+.home-winners_item {
+  background-color: #fff;
 }
