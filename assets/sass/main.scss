@@ -376,9 +376,7 @@ html {
 }
 
 body {
-  background-image: url(../img/body.png);
-  background-repeat: repeat-x;
-  background-size: 0 100%;
+  background: url("../img/body.png") repeat-x 0 100%;;
 }
 
 .long_header {
@@ -672,6 +670,7 @@ body {
     line-height: 32px;
 
     color: $bluel;
+    color: #000;
   }
   &.review-page h1 {
     width: 96%;
@@ -689,6 +688,7 @@ body {
     line-height: 24px;
 
     color: $bluel;
+    color: #000;
   }
   p {
     font-size: 14px;
@@ -1512,6 +1512,7 @@ div.toplist_item .link-center-column {
     text-decoration: underline;
 
     color: #00f;
+    color: #000;
   }
   .game-block:hover {
     background-position: 0 -18px;
@@ -2081,6 +2082,7 @@ span {
     letter-spacing: -1px;
 
     color: $blue;
+    color: #000;
     background: url('../img/filter-lnk.png') no-repeat 100% 50%;
   }
   .filter-data {
@@ -2762,8 +2764,7 @@ a.free-game-hp {
       z-index: 101;
       left: 0;
 
-      -webkit-transition: opacity .25s linear;
-           -o-transition: opacity .25s linear;
+
               transition: opacity .25s linear;
 
       opacity: 1;
@@ -3810,6 +3811,7 @@ a.free-game-hp {
     &.current a,
     &:hover a {
       color: $bluel;
+      color: white;
       background: $bluell;
     }
     a {
@@ -4524,8 +4526,11 @@ a.free-game-hp {
 .swap-blocks-problem {
   .main-heading {
     padding-top: 5px;
+    .top {
+      padding: 5px 10px 5px 72px;
+    }
     .main-heading-ico {
-      top: 10px;
+      top: 13px;
     }
   }
 }
