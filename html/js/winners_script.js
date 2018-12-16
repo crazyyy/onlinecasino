@@ -1,1 +1,0 @@
-$(document).ready(function(){setTimeout(function(){$(".home-winnerFeedScroll").liMarquee({direction:"up",scrollamount:30})},5e3)});
